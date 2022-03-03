@@ -1,0 +1,57 @@
+<html>
+    <head>
+        <title>字符串的扩展 </title>
+    </head>
+    <body>
+    </body>
+    <script>
+        let s = 'Hello world!';
+        console.log(s.startsWith('Hello'));
+        console.log(s.endsWith('!'));
+        console.log(s.includes('o'));
+
+        console.log('x'.repeat(3));//xxx
+        console.log('hello'.repeat(2));//hellohello
+        console.log('na'.repeat(0));//""
+
+        console.log('x'.padStart(5,'ab'));//ababx
+        console.log('x'.padStart(4,'ab'));//abax
+
+        console.log('x'.padEnd(5,'ab'));//xabab
+        console.log('x'.padEnd(4,'ab'));//xaba
+        //如果原字符串的长度，等于或大于指定的最小长度，则返回原字符串。
+        console.log('xxx'.padStart(2,'ab'));//xxx
+        console.log('xxx'.padEnd(2,'ab'));//xxx
+        //如果用来补全的字符串与原字符串，两者的长度之和超过了指定的最小长度，则会截去超出位数的补全字符串。
+        console.log('abc'.padStart(10,'0123456789'));//0123456abc
+        //如果省略第二个参数，默认使用空格补全长度。
+        console.log('x'.padStart(4));//'    x'
+        console.log('x'.padEnd(4));//'x    '
+        //padStart的常见用途是为数值补全指定位数。下面代码生成10位的数值字符串。
+        console.log('1'.padStart(10,'0'));//"0000000001"
+        console.log('12'.padStart(10,'0'));//"0000000012"
+        console.log('123456'.padStart(10,'0'));//"0000123456"
+        //另一个用途是提示字符串格式。
+        console.log('12'.padStart(10, 'YYYY-MM-DD')); // "YYYY‐MM‐12" 
+        console.log('09-12'.padStart(10, 'YYYY-MM-DD')); // "YYYY‐09‐12"
+
+        const user ='world';
+        console.log(`hello ${user}`);//hello world
+        const firstName = 'zen';
+        const qty = 3;
+        const event ='event';
+        //模板字符串``
+        const content = `
+        Hello ${firstName},
+        Thanks for ordering ${qty} tickets to ${event}`;
+        console.log(content);
+
+        alert`123`;
+
+        //“标签模板”的一个重要应用，就是过滤 HTML 字符串，防止用户输入恶意内容。 
+        const sender = "zen";
+        let message = `<p>${sender} has sent you a message.</p>`;
+        console.log(message);
+
+    </script>
+</html>

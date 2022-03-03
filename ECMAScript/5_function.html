@@ -1,0 +1,53 @@
+<html>
+    <head>
+        <title>函数的扩展 </title>
+    </head>
+    <body>
+    </body>
+    <script>
+        function log(x,y='World'){
+            console.log(x,y);
+        }
+        log('Hello');
+        log('Hello','China');
+        log('Hello','');
+
+        function Point(x=0,y=0){
+            this.x = x;
+            this.y = y;
+        }
+        const p = new Point();
+        console.log(p);
+
+
+        function add(...values){
+            let sum = 0;
+            for(var val of values){
+                sum+=val;
+            }
+            return sum;
+        }
+
+        console.log(add(2,5,3,4));
+
+        var f = v =>v;
+        //等同于
+        // var f = function(v){
+        //     return v;
+        // }
+        console.log(f(5));
+        //如果箭头函数不需要参数或需要多个参数，就是用一个圆括号代表参数部分
+        var f =()=>5;
+        //等同于
+        var f = function(){return 5}
+
+        var sum = (mum1,mum2)=>num1+num2;
+        //等同于
+        var sum = function(num1,num2){
+            return num1+num2;
+        }
+        //如果箭头函数的代码块部分多于一条语句，就要使用大括号将它们括起来，并且使用return语句返回。 
+        var sum = (num1, num2) => { return num1 + num2; }
+
+    </script>
+</html>
